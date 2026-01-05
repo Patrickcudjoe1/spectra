@@ -18,6 +18,13 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .logoIcon {
@@ -52,7 +59,7 @@
 }
 
 .navLink {
-  color: white;
+  color: var(--color-text-primary);
   font-weight: 100;
   font-size: 1rem;
   font-family: sans-serif;
@@ -63,7 +70,7 @@
 }
 
 .navLink:hover {
-  color: red;
+  color: var(--color-link-hover);
 }
 
 @media (max-width: 968px) {

@@ -1,6 +1,6 @@
 .contactSection {
   width: 100%;
-  background: black;
+  background: var(--color-bg-secondary);
   padding: 6rem 0;
   position: relative;
 }
@@ -28,7 +28,7 @@
 .title {
   font-size: 4rem;
   font-weight: 700;
-  color: white;
+  color: var(--color-text-primary);
   font-family: sans-serif;
   line-height: 1;
   margin: 0;
@@ -40,7 +40,7 @@
 .description {
   font-size: 1rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-secondary);
   font-family: sans-serif;
   line-height: 1.6;
   margin: 0;
@@ -61,7 +61,7 @@
 .infoLabel {
   font-size: 1rem;
   font-weight: 600;
-  color: white;
+  color: var(--color-text-primary);
   font-family: sans-serif;
   text-transform: capitalize;
 }
@@ -69,14 +69,14 @@
 .infoValue {
   font-size: 1rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-secondary);
   font-family: sans-serif;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .infoValue:hover {
-  color: white;
+  color: var(--color-text-primary);
 }
 
 .socialIcons {
@@ -87,7 +87,7 @@
 }
 
 .socialIcon {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-secondary);
   transition: color 0.2s ease;
   display: flex;
   align-items: center;
@@ -96,7 +96,7 @@
 }
 
 .socialIcon:hover {
-  color: white;
+  color: var(--color-text-primary);
 }
 
 .socialIcon svg {
@@ -112,17 +112,17 @@
 }
 
 .formContainer {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-bg-card);
   padding: 3rem;
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--color-border-primary);
 }
 
 .formTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: white;
+  color: var(--color-text-primary);
   font-family: sans-serif;
   line-height: 1;
   margin: 0 0 3rem 0;
@@ -145,8 +145,8 @@
 .textarea {
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
+  border-bottom: 1px solid var(--color-border-secondary);
+  color: var(--color-text-primary);
   font-size: 1rem;
   font-weight: 400;
   font-family: sans-serif;
@@ -159,12 +159,12 @@
 .input:focus,
 .textarea:focus {
   outline: none;
-  border-bottom-color: white;
+  border-bottom-color: var(--color-text-primary);
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-muted);
 }
 
 .textarea {
@@ -173,9 +173,9 @@
 }
 
 .submitButton {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border-secondary);
+  color: var(--color-text-primary);
   font-size: 0.875rem;
   font-weight: 600;
   font-family: sans-serif;
@@ -193,8 +193,8 @@
 }
 
 .submitButton:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--color-bg-card);
+  border-color: var(--color-border-primary);
 }
 
 .submitButton:disabled {
@@ -217,7 +217,7 @@
   transform-origin: center;
   font-size: 0.75rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-muted);
   font-family: sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.2em;

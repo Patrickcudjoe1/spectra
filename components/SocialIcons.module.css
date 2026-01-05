@@ -14,7 +14,7 @@
 }
 
 .socialIcon {
-  color: white !important;
+  color: var(--color-text-primary) !important;
   transition: color 0.2s ease, transform 0.2s ease;
   display: flex !important;
   align-items: center;
@@ -27,7 +27,7 @@
 }
 
 .socialIcon:hover {
-  color: #FF5000;
+  color: var(--color-accent-primary);
   transform: scale(1.1);
 }
 
