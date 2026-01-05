@@ -1,0 +1,166 @@
+.hero {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+}
+
+.heroPanel {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+  padding: 2rem 3rem 4rem 3rem;
+}
+
+.topText {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.brandName {
+  font-size: 8rem;
+  font-weight: 700;
+  color: white;
+  font-family: sans-serif;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.bottomText {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.5rem;
+}
+
+.scrollIndicator {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dash {
+  font-weight: 300;
+}
+
+@media (max-width: 968px) {
+  .heroPanel {
+    padding: 3rem 2rem;
+  }
+
+  .brandName {
+    font-size: 6rem;
+  }
+
+  .scrollIndicator {
+    right: 1.5rem;
+    font-size: 0.6875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroPanel {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .brandName {
+    font-size: 5rem;
+  }
+
+  .topText,
+  .bottomText {
+    font-size: 0.9375rem;
+  }
+
+  .scrollIndicator {
+    right: 1rem;
+    font-size: 0.625rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroPanel {
+    padding: 2rem 1.25rem;
+    min-height: calc(100vh - 100px);
+  }
+
+  .brandName {
+    font-size: 4rem;
+  }
+
+  .topText,
+  .bottomText {
+    font-size: 0.875rem;
+  }
+
+  .scrollIndicator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroPanel {
+    padding: 1.5rem 1rem;
+  }
+
+  .brandName {
+    font-size: 3rem;
+    letter-spacing: -0.01em;
+  }
+
+  .topText,
+  .bottomText {
+    font-size: 0.8125rem;
+  }
+
+  .content {
+    gap: 0.75rem;
+  }
+}

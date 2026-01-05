@@ -1,0 +1,411 @@
+/* styles.css — modern landing page for Spectro
+   Clean, responsive layout using CSS Grid & Flexbox
+   Comments explain structure and key choices for maintainability
+*/
+
+:root {
+    --bg: #0f172a;
+    --card: #0b1220;
+    --muted: #9aa4b2;
+    --accent-1: #ff7a59;
+    --accent-2: #6a5cff;
+    --accent-3: #06d6a0;
+    --glass: rgba(255, 255, 255, 0.04);
+    --max-width: 1100px;
+    --radius: 12px;
+    --fw-bold: 700;
+}
+
+/* Simple reset and sensible defaults */
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #e6eef8;
+    background: linear-gradient(180deg, #071023 0%, #081127 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: linear-gradient(180deg, rgba(7, 18, 35, 0.6), rgba(7, 18, 35, 0.4));
+    backdrop-filter: blur(6px);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    gap: 16px
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none
+}
+
+.logo svg {
+    flex-shrink: 0
+}
+
+.brand {
+    font-weight: 600;
+    font-size: 1.05rem
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center
+}
+
+.nav-list a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+    color: #fff
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid transparent;
+    color: var(--muted);
+    padding: 8px 10px;
+    border-radius: 8px
+}
+
+.nav-toggle:focus {
+    outline: 3px solid rgba(106, 92, 255, 0.25)
+}
+
+.header-cta {
+    display: inline-block
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .2s ease
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    color: white;
+    box-shadow: 0 6px 20px rgba(106, 92, 255, 0.12)
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px)
+}
+
+.btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--muted);
+    background: transparent
+}
+
+.btn-outline:hover {
+    color: #fff
+}
+
+/* Hero */
+.hero {
+    padding: 80px 0
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 32px;
+    align-items: center
+}
+
+.hero-title {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    margin: 0 0 12px;
+    line-height: 1.0
+}
+
+.hero-tag {
+    color: var(--muted);
+    margin: 0 0 18px
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 12px
+}
+
+.hero-art-svg {
+    width: 100%;
+    height: auto;
+    border-radius: 12px
+}
+
+/* Services */
+.section {
+    padding: 64px 0
+}
+
+.section-title {
+    font-size: 1.6rem;
+    margin: 0 0 8px
+}
+
+.section-sub {
+    color: var(--muted);
+    margin: 0 0 24px
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px
+}
+
+.service-card {
+    background: var(--glass);
+    padding: 18px;
+    border-radius: 12px;
+    transition: transform .2s ease, box-shadow .2s ease
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(12, 18, 40, 0.6)
+}
+
+.service-icon {
+    font-size: 28px;
+    margin-bottom: 8px
+}
+
+/* Portfolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0
+}
+
+.portfolio-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .45s cubic-bezier(.2, .9, .2, 1)
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05)
+}
+
+.portfolio-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 14px;
+    background: linear-gradient(180deg, transparent, rgba(2, 6, 23, 0.7));
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform .28s ease
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0)
+}
+
+/* Why */
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 28px;
+    align-items: center
+}
+
+.why-list {
+    color: var(--muted);
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 24px
+}
+
+.why-list li {
+    margin: 8px 0
+}
+
+.why-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.stat {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center
+}
+
+.stat h3 {
+    margin: 0;
+    font-size: 1.6rem
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(180deg, rgba(106, 92, 255, 0.08), rgba(6, 214, 160, 0.02));
+    border-radius: 12px;
+    padding: 40px 0;
+    margin: 30px 0
+}
+
+.cta-inner {
+    text-align: center
+}
+
+.cta-ctas {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 12px
+}
+
+/* Footer */
+.site-footer {
+    padding: 20px 0;
+    color: var(--muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.social a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 12px
+}
+
+/* Responsive */
+@media (max-width:1000px) {
+    .hero-grid {
+        grid-template-columns: 1fr 340px
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media (max-width:720px) {
+    .header-inner {
+        gap: 8px
+    }
+
+    .nav-list {
+        display: none
+    }
+
+    .nav-toggle {
+        display: inline-block
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr
+    }
+
+    .hero-art {
+        order: 2
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 8px
+    }
+}
+
+/* Accessibility: focus states */
+a:focus,
+button:focus {
+    outline: 3px solid rgba(106, 92, 255, 0.18);
+    outline-offset: 2px
+}
+
+/* Small helper animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .6s ease, transform .6s ease
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: none
+}
+
+/* Utility */
+.hidden {
+    display: none
+}
+
+/* End of styles */
